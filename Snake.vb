@@ -31,7 +31,7 @@ Friend Class Snake
 
     Private Shared ReadOnly Property MoveDelay(score As Integer) As Double
         Get
-            Return Math.Max(0.05, 0.1 - score / 10000)
+            Return Math.Max(0.05, 0.1 - score / 1000)
         End Get
     End Property
 
