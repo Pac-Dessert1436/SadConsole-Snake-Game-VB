@@ -1,5 +1,7 @@
 # SadConsole Snake Game (VB.NET)
 
+> **Latest Update on August 5, 2026**: Internal code cleanup and optimization with the game window resized to the standard size of 800x600 pixels. No gameplay changes were made.
+
 ## Description
 
 This project is a modern implementation of the classic snake game, built entirely in VB.NET using the SadConsole library. The game features:
@@ -27,9 +29,10 @@ cd SadConsole-Snake-Game-VB
 ```
 
 3. **Build and Run**:
-   - **Visual Studio 2022/2026**: Open `SadConsole Snake Game.slnx` in Visual Studio 2022/2026 and click the "Run" button
+   - **Visual Studio 2026**: Open `SadConsole Snake Game.slnx` in Visual Studio 2026 and click the "Run" button. Make sure you restore the project dependencies first if you haven't done so.
    - **Visual Studio Code**: Use the command line to build and run:
     ```bash
+    dotnet restore  # Restore project dependencies first
     dotnet build
     dotnet run
     ```

@@ -1,8 +1,9 @@
 Imports SadConsole
 Imports SadRogue.Primitives
 
-Friend Structure GameGlyph
-    Private ReadOnly code As Integer, color As Color
+Public Structure GameGlyph
+    Private ReadOnly code As Integer
+    Private ReadOnly color As Color
 
     Private Sub New(code As Integer, color As Color)
         Me.code = code
@@ -21,7 +22,7 @@ Friend Structure GameGlyph
     End Property
 End Structure
 
-Friend Class Snake
+Public NotInheritable Class Snake
     Private ReadOnly _map As ScreenSurface
     Private ReadOnly _body As New List(Of Point)
     Private _direction As Direction

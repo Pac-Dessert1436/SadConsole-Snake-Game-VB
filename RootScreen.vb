@@ -2,14 +2,14 @@ Imports SadConsole
 Imports SadRogue.Primitives
 Imports SadConsole.Input
 
-Friend Enum GameState
+Public Enum GameState
     Title = 0
     Playing = 1
     Paused = 2
     GameOver = 3
 End Enum
 
-Friend Class RootScreen
+Public NotInheritable Class RootScreen
     Inherits ScreenObject
 
     Private ReadOnly _map As ScreenSurface
@@ -18,15 +18,18 @@ Friend Class RootScreen
     Private _foodPosition As Point
     Private _score As Integer, _highScore As Integer
     Private _gameState As GameState
-    Private Const MAGIC_NUM As Integer = 10, AREA_WIDTH As Integer = 80, AREA_HEIGHT As Integer = 25
+    Private Const AREA_WIDTH As Integer = 80
+    Private Const AREA_HEIGHT As Integer = 30
     Private Const PAUSE_TEXT As String = "PAUSED - Press 'P' to Resume"
 
     Public Sub New()
-        _map = New ScreenSurface(Game.Instance.ScreenCellsX, Game.Instance.ScreenCellsY - 5) With {
-            .UseMouse = False
-        }
+        With Game.Instance
+            _map = New ScreenSurface(.ScreenCellsX, .ScreenCellsY) With {
+                .UseMouse = False
+            }
+        End With
 
-        _playArea = New Rectangle(MAGIC_NUM * 2, MAGIC_NUM \ 2, AREA_WIDTH, AREA_HEIGHT)
+        _playArea = New Rectangle(10, 3, AREA_WIDTH, AREA_HEIGHT)
         _score = 0
         _gameState = GameState.Title
 
